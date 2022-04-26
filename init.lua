@@ -9,6 +9,8 @@ local awful = require('awful')
 local gears = require('gears')
 local wibox = require('wibox')
 
+local setmetatable = setmetatable
+
 --- The wallpaper Module
 local awesome_wallpaper = {}
 local mt = {}
@@ -92,6 +94,6 @@ function awesome_wallpaper.draw_wallpaper(self)
     end)
 end
 
-function mt:__call(self, ...) return awesome_wallpaper.new(...) end
+function mt.__call(self, ...) return awesome_wallpaper.new(...) end
 
 return setmetatable(awesome_wallpaper, mt)
