@@ -8,6 +8,8 @@
 
 This is a simple AwesomeWM themed wallpaper generator. The module generates wallpapers with the word *AwesomeWM* in a cool font.
 
+**Note:** This module requires the up-to-date version of AwesomeWM from the master branch.
+
 ## Installation
 
 To install, clone this repository into your AwesomeWM configuration folder. 
