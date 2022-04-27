@@ -39,8 +39,8 @@ end
 -- @tparam[opt] number args.spacing The spacing between the letters.
 -- @treturn awesome-wallpaper The awesome-wallpaper instance.
 -- @constructorfct awesome-wallpaper.new
-function awesome_wallpaper.new(args)
-    args = gears.table.crush({
+function awesome_wallpaper.new(self, args)
+    local args = gears.table.crush({
         background_color = "#10171e",
         letter_colors = {
             "#fca2aa", "#F8BD96", "#fbeab9", "#9ce5c0", "#c7e5d6", "#bac8ef",
@@ -70,10 +70,10 @@ function awesome_wallpaper.new(args)
         word_widget:add(create_letter_wibox(c, letter_colors[i], font_size))
     end
 
-    awesome_wallpaper.word_widget = word_widget
-    awesome_wallpaper.bg_color = bg_color
+    self.word_widget = word_widget
+    self.bg_color = bg_color
 
-    return awesome_wallpaper
+    return self
 end
 
 --- Function that creates the wallpaper
@@ -94,6 +94,6 @@ function awesome_wallpaper.draw_wallpaper(self)
     end)
 end
 
-function mt.__call(self, ...) return awesome_wallpaper.new(...) end
+function mt.__call(self, ...) return awesome_wallpaper:new(...) end
 
 return setmetatable(awesome_wallpaper, mt)
